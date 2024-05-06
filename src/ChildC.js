@@ -1,21 +1,16 @@
-import React from 'react'
-import {data} from './App'
+import React, { useContext } from 'react'
+import {data , data1} from'./App'
 
 const ChildC = () => {
+    const name=useContext(data);
+    const gender=useContext(data1);
+
   return (
 
    <>
-   {/* // only one function accept problematic when there are more than one value to pass */}
-   <data.Consumer >
-    {
-        (name) => {
-            return (
-                <h1>{name}</h1>
-            )
-        }
-    }
+   <p>{gender}</p>
+   <p>{name}</p>
 
-   </data.Consumer>
    </>
   )
 }
